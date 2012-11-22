@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonSharp", "PokemonSharp\PokemonSharp.csproj", "{4AA66BEC-0FDF-4F92-BB5C-5152D5A5D78F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUI", "WpfUI\WpfUI.csproj", "{CE4B8F8A-040C-4251-9714-39F54FC29B69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsUI", "FormsUI\FormsUI.csproj", "{A9A62D1F-3654-4067-B5B2-63CF96CDCBA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AA66BEC-0FDF-4F92-BB5C-5152D5A5D78F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA66BEC-0FDF-4F92-BB5C-5152D5A5D78F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA66BEC-0FDF-4F92-BB5C-5152D5A5D78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA66BEC-0FDF-4F92-BB5C-5152D5A5D78F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9A62D1F-3654-4067-B5B2-63CF96CDCBA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9A62D1F-3654-4067-B5B2-63CF96CDCBA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9A62D1F-3654-4067-B5B2-63CF96CDCBA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9A62D1F-3654-4067-B5B2-63CF96CDCBA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE4B8F8A-040C-4251-9714-39F54FC29B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4B8F8A-040C-4251-9714-39F54FC29B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4B8F8A-040C-4251-9714-39F54FC29B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE4B8F8A-040C-4251-9714-39F54FC29B69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

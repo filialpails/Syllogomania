@@ -1,0 +1,3528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AA66BEC-0FDF-4F92-BB5C-5152D5A5D78F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PokemonSharp</RootNamespace>
+    <AssemblyName>PokemonSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities.cs" />
+    <Compile Include="Ability.cs" />
+    <Compile Include="AffectsWhom.cs" />
+    <Compile Include="Badges.cs" />
+    <Compile Include="BaseStats.cs" />
+    <Compile Include="Block.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="DamageCategory.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="EggGroups.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Evolution.cs" />
+    <Compile Include="EVs.cs" />
+    <Compile Include="Gender.cs" />
+    <Compile Include="GenderRatio.cs" />
+    <Compile Include="GrowthRate.cs" />
+    <Compile Include="HM.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemBall.cs" />
+    <Compile Include="Items.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="LearnableMove.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="Maps.cs" />
+    <Compile Include="Mart.cs" />
+    <Compile Include="Move.cs" />
+    <Compile Include="MovementType.cs" />
+    <Compile Include="Moves.cs" />
+    <Compile Include="Nature.cs" />
+    <Compile Include="NonVolatileAilment.cs" />
+    <Compile Include="NPC.cs" />
+    <Compile Include="NPCs.cs" />
+    <Compile Include="Objects.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Pocket.cs" />
+    <Compile Include="PokedexEntry.cs" />
+    <Compile Include="Pokemon.cs" />
+    <Compile Include="PokemonColor.cs" />
+    <Compile Include="PokemonListMode.cs" />
+    <Compile Include="PRNG.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Roamer.cs" />
+    <Compile Include="Roamers.cs" />
+    <Compile Include="Season.cs" />
+    <Compile Include="Signpost.cs" />
+    <Compile Include="Signposts.cs" />
+    <Compile Include="Sprite.cs" />
+    <Compile Include="Sprites.cs" />
+    <Compile Include="TerrainType.cs" />
+    <Compile Include="TextWindow.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="Tileset.cs" />
+    <Compile Include="TimeOfDay.cs" />
+    <Compile Include="TM.cs" />
+    <Compile Include="Trainer.cs" />
+    <Compile Include="TrainerNPC.cs" />
+    <Compile Include="Trainers.cs" />
+    <Compile Include="TrainerType.cs" />
+    <Compile Include="Types.cs" />
+    <Compile Include="VolatileAilments.cs" />
+    <Compile Include="Weather.cs" />
+    <Compile Include="WildPokemon.cs" />
+    <Compile Include="World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\QuestionMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\1b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\2b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\3b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\4b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\5b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\6.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\6b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\7.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\7b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\8b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\9.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\9b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\10.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\10b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\11b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\12.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\12b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\13.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\13b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\14.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\14b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\15.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\15b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\16.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\16b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\17.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\17b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\18.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\18b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\23.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\23b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\24.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\24b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\25.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\25b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\26.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\26b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\27.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\27b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\28.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\28b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\29b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\30.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\30b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\31.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\31b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\32.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\32b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\33.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\33b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\34.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\34b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\35.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\35b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\36.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\36b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\37.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\37b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\38.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\38b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\39.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\39b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\40.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\40b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\43.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\43b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\44.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\44b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\45.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\45b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\49.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\49b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\50.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\50b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\51.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\51b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\52.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\52b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\53.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\53b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\55.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\55b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\56.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\56b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\57.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\57b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\58.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\58b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\59.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\59b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\60.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\60b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\61.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\61b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\62.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\62b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\63.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\63b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\64.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\64b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\65.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\65b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\66.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\66b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\67.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\67b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\68.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\68b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\78.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\78b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\84.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\84b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\85.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\85b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\86.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\86b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\87.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\87b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\89.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\89b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\95.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\95b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\98.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\98b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\99.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\99b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\100.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\100b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\101.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\101b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\102.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\102b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\103.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\103b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\104.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\104b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\105.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\105b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\106.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\106b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\107.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\107b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\109.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\109b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\113.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\113b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\114.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\114b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\115.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\115b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\118.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\118b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\119.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\119b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\122.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\122b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\123.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\123b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\124.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\124b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\125.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\125b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\126.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\126b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\127.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\127b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\128.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\128b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\131.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\131b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\132.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\132b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\133.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\133b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\134.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\134b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\135.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\135b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\136.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\136b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\137.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\137b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\143.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\143b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\144.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\144b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\145.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\145b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\146.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\146b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\147.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\147b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\148.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\148b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\149.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\149b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\150.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\150b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\151.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\151b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\152.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\152b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\153.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\153b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\154.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\154b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\155.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\155b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\156.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\156b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\157.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\157b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\158.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\158b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\159.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\159b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\160.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\160b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\161.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\161b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\162.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\162b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\163.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\163b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\164.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\164b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\165.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\165b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\166.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\166b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\170.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\170b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\171.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\171b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\172.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\172b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\173.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\173b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\174.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\174b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\175.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\175b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\176.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\176b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\177.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\177b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\178.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\178b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\179.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\179b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\180.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\180b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\181.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\181b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\182.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\182b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\183.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\183b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\184.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\184b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\185.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\185b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\186.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\186b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\190.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\190b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\192.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\192b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\196.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\196b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\197.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\197b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\199.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\199b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\200.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\200b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\203.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\203b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\204.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\204b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\205.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\205b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\206.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\206b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\208.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\208b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\209.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\209b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\210.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\210b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\211.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\211b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\212.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\212b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\213.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\213b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\214.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\214b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\216.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\216b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\217.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\217b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\220.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\220b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\221.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\221b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\222.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\222b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\225.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\225b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\226.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\226b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\230.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\230b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\231.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\231b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\233.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\233b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\234.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\234b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\235.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\235b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\236.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\236b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\237.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\237b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\238.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\238b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\239.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\239b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\240.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\240b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\241.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\241b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\242.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\242b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\243.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\243b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\244.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\244b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\245.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\245b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\249.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\249b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\250.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\250b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\251.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\251b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\252.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\252b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\253.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\253b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\254.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\254b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\255.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\255b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\256.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\256b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\257.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\257b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\258.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\258b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\259.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\259b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\260.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\260b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\261.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\261b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\262.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\262b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\263.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\263b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\264.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\264b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\265.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\265b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\266.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\266b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\267.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\267b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\268.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\268b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\269.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\269b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\270.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\270b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\271.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\271b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\272.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\272b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\273.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\273b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\274.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\274b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\275.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\275b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\276.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\276b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\277.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\277b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\278.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\278b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\279.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\279b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\280.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\280b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\281.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\281b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\282.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\282b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\283.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\283b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\284.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\284b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\285.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\285b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\286.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\286b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\287.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\287b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\288.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\288b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\289.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\289b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\290.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\290b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\291.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\291b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\292.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\292b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\293.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\293b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\294.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\294b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\295.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\295b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\296.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\296b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\297.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\297b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\298.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\298b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\299.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\299b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\300.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\300b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\301.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\301b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\302.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\302b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\303.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\303b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\304.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\304b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\305.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\305b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\306.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\306b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\307.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\307b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\308.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\308b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\309.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\309b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\310.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\310b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\311.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\311b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\312.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\312b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\313.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\313b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\314.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\314b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\315.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\315b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\316.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\316b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\317.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\317b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\318.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\318b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\319.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\319b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\320.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\320b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\321.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\321b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\322.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\322b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\323.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\323b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\324.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\324b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\325.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\325b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\326.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\326b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\327.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\327b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\328.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\328b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\329.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\329b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\330.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\330b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\331.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\331b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\332.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\332b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\333.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\333b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\334.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\334b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\335.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\335b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\336.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\336b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\337.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\337b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\338.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\338b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\339.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\339b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\340.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\340b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\341.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\341b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\342.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\342b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\343.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\343b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\344.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\344b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\345.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\345b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\346.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\346b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\347.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\347b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\348.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\348b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\349.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\349b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\350.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\350b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\352.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\352b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\353.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\353b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\354.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\354b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\355.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\355b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\356.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\356b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\357.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\357b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\358.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\358b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\359.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\359b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\360.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\360b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\361.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\361b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\362.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\362b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\363.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\363b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\364.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\364b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\365.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\365b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\366.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\366b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\367.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\367b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\368.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\368b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\369.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\369b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\370.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\370b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\371.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\371b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\372.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\372b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\373.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\373b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\374.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\374b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\375.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\375b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\376.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\376b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\377.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\377b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\378.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\378b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\379.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\379b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\380.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\380b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\381.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\381b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\382.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\382b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\383.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\383b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\384.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\384b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\385.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\385b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\387.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\387b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\388.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\388b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\389.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\389b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\390.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\390b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\391.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\391b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\392.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\392b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\393.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\393b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\394.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\394b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\395.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\395b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\396.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\396b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\397.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\397b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\398.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\398b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\399.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\399b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\400.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\400b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\401.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\401b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\402.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\402b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\403.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\403b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\404.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\404b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\405.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\405b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\406.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\406b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\407.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\407b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\408.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\408b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\409.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\409b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\410.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\410b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\411.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\411b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\414.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\414b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\415.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\415b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\416.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\416b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\417.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\417b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\418.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\418b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\419.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\419b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\420.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\420b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\424.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\424b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\425.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\425b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\426.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\426b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\427.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\427b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\428.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\428b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\429.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\429b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\430.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\430b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\431.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\431b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\432.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\432b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\433.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\433b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\434.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\434b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\435.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\435b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\436.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\436b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\437.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\437b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\438.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\438b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\439.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\439b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\440.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\440b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\441.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\441b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\442.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\442b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\443.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\443b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\444.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\444b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\445.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\445b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\446.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\446b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\447.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\447b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\448.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\448b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\449.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\449b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\450.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\450b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\451.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\451b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\452.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\452b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\453.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\453b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\454.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\454b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\455.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\455b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\456.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\456b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\457.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\457b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\458.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\458b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\459.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\459b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\460.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\460b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\461.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\461b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\462.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\462b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\463.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\463b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\464.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\464b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\465.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\465b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\466.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\466b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\467.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\467b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\468.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\468b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\469.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\469b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\470.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\470b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\471.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\471b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\472.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\472b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\473.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\473b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\474.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\474b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\475.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\475b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\476.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\476b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\477.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\477b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\478.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\478b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\480.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\480b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\481.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\481b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\482.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\482b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\483.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\483b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\484.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\484b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\485.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\485b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\486.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\486b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\488.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\488b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\489.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\489b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\490.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\490b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\491.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\491b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\494.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\494b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\495.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\495b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\496.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\496b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\497.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\497b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\498.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\498b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\499.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\499b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\500.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\500b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\501.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\501b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\502.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\502b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\503.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\503b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\504.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\504b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\505.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\505b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\506.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\506b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\507.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\507b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\508.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\508b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\509.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\509b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\510.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\510b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\511.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\511b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\512.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\512b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\513.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\513b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\514.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\514b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\515.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\515b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\516.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\516b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\517.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\517b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\518.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\518b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\519.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\519b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\520.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\520b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\521.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\521b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\522.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\522b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\523.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\523b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\524.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\524b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\525.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\525b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\526.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\526b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\527.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\527b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\528.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\528b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\529.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\529b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\530.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\530b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\531.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\531b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\532.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\532b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\533.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\533b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\534.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\534b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\535.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\535b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\536.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\536b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\537.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\537b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\538.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\538b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\539.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\539b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\540.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\540b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\541.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\541b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\542.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\542b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\543.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\543b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\544.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\544b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\545.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\545b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\546.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\546b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\547.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\547b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\548.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\548b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\549.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\549b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\551.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\551b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\552.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\552b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\553.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\553b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\554.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\554b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\556.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\556b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\557.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\557b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\558.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\558b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\559.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\559b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\560.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\560b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\561.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\561b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\562.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\562b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\563.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\563b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\564.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\564b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\565.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\565b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\566.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\566b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\567.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\567b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\568.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\568b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\569.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\569b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\570.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\570b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\571.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\571b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\572.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\572b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\573.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\573b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\574.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\574b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\575.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\575b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\576.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\576b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\577.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\577b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\578.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\578b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\579.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\579b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\580.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\580b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\581.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\581b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\582.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\582b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\583.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\583b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\584.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\584b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\587.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\587b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\588.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\588b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\589.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\589b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\590.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\590b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\591.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\591b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\592.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\592b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\593.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\593b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\594.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\594b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\595.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\595b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\596.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\596b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\597.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\597b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\598.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\598b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\599.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\599b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\600.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\600b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\601.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\601b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\602.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\602b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\603.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\603b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\604.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\604b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\605.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\605b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\606.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\606b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\607.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\607b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\608.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\608b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\609.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\609b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\610.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\610b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\611.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\611b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\612.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\612b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\613.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\613b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\614.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\614b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\615.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\615b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\616.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\616b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\617.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\617b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\618.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\618b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\619.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\619b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\620.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\620b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\621.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\621b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\622.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\622b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\623.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\623b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\624.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\624b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\625.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\625b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\626.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\626b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\627.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\627b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\628.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\628b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\629.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\629b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\630.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\630b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\631.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\631b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\632.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\632b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\633.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\633b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\634.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\634b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\635.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\635b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\636.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\636b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\637.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\637b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\638.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\638b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\639.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\639b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\640.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\640b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\641.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\641b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\642.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\642b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\643.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\643b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\644.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\644b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\645.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\645b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\646.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\646b.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\647.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sprites\647b.gif" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icon.ico" />
+    <Content Include="Resources\Maps\Pallet Town.txt" />
+    <Content Include="Resources\Maps\Route 1.txt" />
+    <Content Include="Resources\Maps\Viridian City.txt" />
+    <Content Include="Resources\Sprites\barrier.png" />
+    <Content Include="Resources\Sprites\black.png" />
+    <Content Include="Resources\Sprites\boybattle1.png" />
+    <Content Include="Resources\Sprites\boybattle2.png" />
+    <Content Include="Resources\Sprites\brown_fence.png" />
+    <Content Include="Resources\Sprites\bush.png" />
+    <Content Include="Resources\Sprites\dark_grass.png" />
+    <Content Include="Resources\Sprites\dark_stone.png" />
+    <Content Include="Resources\Sprites\dark_water.png" />
+    <Content Include="Resources\Sprites\dirt.png" />
+    <Content Include="Resources\Sprites\FRLG_Blue_Title.png" />
+    <Content Include="Resources\Sprites\girlbattle1.png" />
+    <Content Include="Resources\Sprites\girlbattle2.png" />
+    <Content Include="Resources\Sprites\light_grass.png" />
+    <Content Include="Resources\Sprites\light_stone.png" />
+    <Content Include="Resources\Sprites\light_water_still.png" />
+    <Content Include="Resources\Sprites\med_grass.png" />
+    <Content Include="Resources\Sprites\med_water.png" />
+    <Content Include="Resources\Sprites\mudkip.png" />
+    <Content Include="Resources\Sprites\nobg.png" />
+    <Content Include="Resources\Sprites\nonpc.png" />
+    <Content Include="Resources\Sprites\OakHGSSIntro.png" />
+    <Content Include="Resources\Sprites\oak_down1.gif" />
+    <Content Include="Resources\Sprites\oak_down2.gif" />
+    <Content Include="Resources\Sprites\oak_down3.gif" />
+    <Content Include="Resources\Sprites\oak_left1.gif" />
+    <Content Include="Resources\Sprites\oak_left2.gif" />
+    <Content Include="Resources\Sprites\oak_left3.gif" />
+    <Content Include="Resources\Sprites\oak_right1.gif" />
+    <Content Include="Resources\Sprites\oak_right2.gif" />
+    <Content Include="Resources\Sprites\oak_right3.gif" />
+    <Content Include="Resources\Sprites\oak_up1.gif" />
+    <Content Include="Resources\Sprites\oak_up2.gif" />
+    <Content Include="Resources\Sprites\oak_up3.gif" />
+    <Content Include="Resources\Sprites\sand.png" />
+    <Content Include="Resources\Sprites\sign.png" />
+    <Content Include="Resources\Sprites\tall_grass.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,2 +1,4 @@
-Pokemon.NET
-===========
+Syllogomania
+============
+
+Pokemon clone for .NET

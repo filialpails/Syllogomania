@@ -1,0 +1,40 @@
+namespace PokemonSharp
+{
+	public enum TrainerType : byte
+	{
+		Beauty,
+		Biker,
+		BirdKeeper,
+		BlackBelt,
+		Boss,
+		BugCatcher,
+		Burglar,
+		Champion,
+		Channeler,
+		AceTrainer,
+		Cueball,
+		EliteFour,
+		Engineer,
+		Fisherman,
+		Gamer,
+		Gentleman,
+		Hiker,
+		Camper,
+		Picnicker,
+		Juggler,
+		Lass,
+		Leader,
+		PokeManiac,
+		PokemonTrainer,
+		Psychic,
+		Rival,
+		Rocker,
+		TeamRocketGrunt,
+		Sailor,
+		Scientist,
+		SuperNerd,
+		Swimmer,
+		Tamer,
+		Youngster
+	}
+}
