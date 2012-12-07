@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -54,14 +53,14 @@ namespace FormsUI
 				}).ShowDialog();
 				Gender gender = (new TextWindow(new[] { "Now tell me. Are you a boy?  Or are you a girl?" }).ShowQuestion("Boy", "Girl") == DialogResult.Yes) ? Gender.Male : Gender.Female;
 				new TextWindow(new[] { "Let's begin with your name. What is it?" }).ShowDialog();
-				string text = new NameEntry((gender == Gender.Male) ? Sprite.BoySprite.Down : Sprite.GirlSprite.Down).enterName();
+				string text = new NameEntry(null/*(gender == Gender.Male) ? Sprite.BoySprite.Down : Sprite.GirlSprite.Down*/).enterName();
 				new TextWindow(new[] { "Right, so your name is " + text }).ShowDialog();
 				new TextWindow(new[] {
 					"This is my grandson.",
 					"He's been your rival since you were both babies.",
 					"...Erm, what was his name now?"
 				}).ShowDialog();
-				string text2 = new NameEntry(Resources.black).enterName();
+				string text2 = new NameEntry(null).enterName();
 				new TextWindow(new string[]
 				{
 					"That's right! I remember now! His name is " + text2,

@@ -2,6 +2,8 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using PokemonSharp;
+
 namespace FormsUI
 {
 	public class PokemonStatus : Form

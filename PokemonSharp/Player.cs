@@ -53,7 +53,7 @@ namespace PokemonSharp
 			{
 				Player.instance = new Player(n, g, r);
 			}
-			Player.instance.currentMap = Maps.PalletTown;
+			//Player.instance.currentMap = Maps.PalletTown;
 		}
 		public static void CreatePlayer(Player p)
 		{
@@ -70,10 +70,10 @@ namespace PokemonSharp
 			switch (this.gender)
 			{
 			case Gender.Male:
-				this.sprite = Sprite.BoySprite;
+				//this.sprite = Sprite.BoySprite;
 				break;
 			case Gender.Female:
-				this.sprite = Sprite.GirlSprite;
+				//this.sprite = Sprite.GirlSprite;
 				break;
 			}
 			this.rivalName = r;

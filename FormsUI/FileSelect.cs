@@ -5,6 +5,8 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using PokemonSharp;
+
 namespace FormsUI
 {
 	public class FileSelect : Form
@@ -77,7 +79,7 @@ namespace FormsUI
 				}
 				Player.CreatePlayer(this.txtName.Text, Gender.Male, this.txtRival.Text);
 			}
-			Player.Instance.givePokemon(new Pokemon(Pokemons.Pikachu, 5, null, null));
+			//Player.Instance.givePokemon(new Pokemon(Pokemons.Pikachu, 5, null, null));
 			base.Close();
 		}
 		private void btnContinue_Click(object sender, EventArgs e)
@@ -199,7 +201,7 @@ namespace FormsUI
 			this.lblIntro.TabIndex = 0;
 			this.lblIntro.Text = componentResourceManager.GetString("lblIntro.Text");
 			this.lblIntro.Visible = false;
-			this.pbOak.Image = Resources.OakHGSSIntro;
+			//this.pbOak.Image = Resources.OakHGSSIntro;
 			this.pbOak.Location = new Point(208, 32);
 			this.pbOak.Margin = new Padding(4);
 			this.pbOak.Name = "pbOak";
@@ -215,7 +217,7 @@ namespace FormsUI
 			this.lblNameConfirm.TabIndex = 0;
 			this.lblNameConfirm.Text = "Right, so your name is ";
 			this.lblNameConfirm.Visible = false;
-			this.pbRival.Image = Resources.FRLG_Blue_Title;
+			//this.pbRival.Image = Resources.FRLG_Blue_Title;
 			this.pbRival.Location = new Point(640, 64);
 			this.pbRival.Margin = new Padding(4);
 			this.pbRival.Name = "pbRival";

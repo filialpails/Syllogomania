@@ -18,36 +18,18 @@ namespace FormsUI
 		private Move playerMove;
 		private Move enemyMove;
 		public static Weather weather = Weather.Normal;
-		private static readonly double[] TYPE_ADVANTAGES = new double[]
-		{
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			1.0,
-			0.0,
-			0.5,
-			0.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			2.0,
-			1.0,
-			0.5,
-			0.5,
-			1.0,
-			2.0,
-			0.5,
-			0.0,
-			2.0,
-			0.0,
+		private static readonly double[][] TYPE_ADVANTAGES = new double[][]
+		{				// NRM  FGT  FLY  PSN  GRN  RCK  BUG  GST  STL  FIR  WTR  GRS  ELC  PSY  ICE  DRG  DRK
+			new double[] { 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 }, //NRM
+			new double[] { 2.0, 1.0, 0.5, 0.5, 1.0, 2.0, 0.5, 0.0, 2.0, 1.0, 1.0, 1.0, 1.0, 0.5, 2.0, 1.0, 2.0 }, //FGT
+			new double[] { 1.0, 2.0, 1.0, 1.0, 1.0, 0.5, 2.0, 1.0, 0.5, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0 }, //FLY
+			new double[] { 1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 1.0, 0.5, 0.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0 }, //PSN
+			new double[] { 1.0, 1.0, 0.0, 2.0, 1.0, 2.0, 0.5, 1.0, 2.0, 2.0, 1.0, 0.5, 2.0, 1.0, 1.0, 1.0, 1.0 }, //GRN
+			new double[] { 1.0, 0.5, 2.0, 1.0, 0.5, 1.0, 2.0, 1.0, 0.5, 2.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0 }, //RCK
+			new double[] { 1.0, 0.5, 0.5, 0.5, 1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 1.0, 2.0, 1.0, 2.0, 1.0, 1.0, 2.0 }, //BUG
+			new double[] { 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 0.5 }, //GST
+			new double[] { 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 0.5, 0.5, 0.5, 1.0, 0.5, 1.0, 2.0, 1.0, 1.0 }, //STL
+			new double[] { 1.0,
 			1.0,
 			1.0,
 			1.0,
@@ -56,160 +38,6 @@ namespace FormsUI
 			2.0,
 			1.0,
 			2.0,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			2.0,
-			1.0,
-			0.5,
-			0.0,
-			1.0,
-			1.0,
-			2.0,
-			0.5,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			0.5,
-			0.5,
-			1.0,
-			0.5,
-			0.0,
-			0.0,
-			1.0,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			0.0,
-			2.0,
-			1.0,
-			2.0,
-			0.5,
-			1.0,
-			2.0,
-			0.0,
-			2.0,
-			1.0,
-			0.5,
-			2.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			2.0,
-			1.0,
-			0.5,
-			1.0,
-			2.0,
-			1.0,
-			0.5,
-			0.0,
-			2.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			0.5,
-			0.5,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			0.5,
-			0.0,
-			0.5,
-			1.0,
-			2.0,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			2.0,
-			0.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			2.0,
-			0.5,
-			0.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			0.5,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			0.5,
-			0.0,
-			0.5,
-			0.5,
-			1.0,
-			0.5,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			0.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			2.0,
-			1.0,
-			2.0,
-			0.0,
 			0.5,
 			0.5,
 			2.0,
@@ -227,7 +55,6 @@ namespace FormsUI
 			1.0,
 			1.0,
 			1.0,
-			0.0,
 			2.0,
 			0.5,
 			0.5,
@@ -245,7 +72,6 @@ namespace FormsUI
 			0.5,
 			1.0,
 			0.5,
-			0.0,
 			0.5,
 			2.0,
 			0.5,
@@ -263,7 +89,6 @@ namespace FormsUI
 			1.0,
 			1.0,
 			1.0,
-			0.0,
 			1.0,
 			2.0,
 			0.5,
@@ -281,7 +106,6 @@ namespace FormsUI
 			1.0,
 			1.0,
 			0.5,
-			0.0,
 			1.0,
 			1.0,
 			1.0,
@@ -289,37 +113,35 @@ namespace FormsUI
 			0.5,
 			1.0,
 			1.0,
-			0.0,
-			1.0,
-			1.0,
-			2.0,
-			1.0,
-			2.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
-			0.0,
-			0.5,
-			0.5,
-			2.0,
-			1.0,
-			1.0,
-			0.5,
-			2.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			1.0,
-			0.5,
 			0.0,
 			1.0,
 			1.0,
+			2.0,
+			1.0,
+			2.0,
+			1.0,
+			1.0,
+			1.0,
+			0.5,
+			0.5,
+			0.5,
+			2.0,
+			1.0,
+			1.0,
+			0.5,
+			2.0,
+			1.0,
+			1.0,
+			1.0,
+			1.0,
+			1.0,
+			1.0,
+			1.0,
+			1.0,
+			1.0,
+			0.5,
+			1.0,
+			1.0,
 			1.0,
 			1.0,
 			1.0,
@@ -335,7 +157,6 @@ namespace FormsUI
 			1.0,
 			2.0,
 			0.5,
-			0.0,
 			1.0,
 			1.0,
 			1.0,
@@ -343,7 +164,7 @@ namespace FormsUI
 			2.0,
 			1.0,
 			1.0,
-			0.5
+			0.5 }
 		};
 		private IContainer components = null;
 		private PictureBox pbxEnemyPic;
@@ -656,7 +477,7 @@ namespace FormsUI
 						{
 							if (target.baseStats.types.HasFlag(types))
 							{
-								num20 *= Battle.TYPE_ADVANTAGES[(int)(m.element * types)];
+								num20 *= Battle.TYPE_ADVANTAGES[(int)m.element][(int)types];
 							}
 						}
 						ushort num4 = (ushort)((((double)level * 0.4 + 2.0) * (double)power * (double)num14 * 0.02 / (double)num15 * num2 + 2.0) * (double)(flag3 ? 2 : 1) * 1.0 * (double)(PRNG.Instance.Next(217, 255) * 100 / 255) * 0.01 * (flag2 ? 1.5 : 1.0) * num20 * 1.0);
@@ -1015,7 +836,7 @@ namespace FormsUI
 			this.enemyMon.evasionLevel = 0;
 			if (win)
 			{
-				byte b = this.playerMon.pokerus ? 2 : 1;
+				byte b = (byte)(this.playerMon.pokerus ? 2 : 1);
 				Pokemon expr_D0 = this.playerMon;
 				expr_D0.hpEV += (byte)((this.enemyMon.baseStats.evYield & 3) / 1 * (ushort)b);
 				Pokemon expr_FA = this.playerMon;
@@ -1160,13 +981,13 @@ namespace FormsUI
 			switch (Player.Instance.gender)
 			{
 			case Gender.Male:
-				this.pbxPlayerPic.Image = Resources.boybattle1;
+				//this.pbxPlayerPic.Image = Resources.boybattle1;
 				break;
 			case Gender.Female:
-				this.pbxPlayerPic.Image = Resources.girlbattle1;
+				//this.pbxPlayerPic.Image = Resources.girlbattle1;
 				break;
 			default:
-				this.pbxPlayerPic.Image = Resources.black;
+				//this.pbxPlayerPic.Image = Resources.black;
 				break;
 			}
 			if (this.wild)
@@ -1252,8 +1073,7 @@ namespace FormsUI
 			}
 			this.playerMove = this.playerMon.moveSet[(int)b];
 			byte[] expr_8F_cp_0 = this.playerMon.PP;
-			byte expr_8F_cp_1 = b;
-			expr_8F_cp_0[(int)expr_8F_cp_1] = expr_8F_cp_0[(int)expr_8F_cp_1] - 1;
+			--expr_8F_cp_0[b];
 			this.postTurn();
 		}
 		protected override void Dispose(bool disposing)

@@ -128,9 +128,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\PokemonSharp\PokemonSharp.csproj">
       <Project>{4aa66bec-0fdf-4f92-bb5c-5152d5a5d78f}</Project>
       <Name>PokemonSharp</Name>

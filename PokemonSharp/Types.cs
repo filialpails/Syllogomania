@@ -14,7 +14,6 @@ namespace PokemonSharp
 		Bug = 7,
 		Ghost = 8,
 		Steel = 9,
-		QuestionMarks = 10,
 		Fire = 11,
 		Water = 12,
 		Grass = 13,
